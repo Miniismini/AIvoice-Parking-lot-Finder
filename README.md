@@ -17,7 +17,7 @@ git clone https://github.com/Miniismini/AIvoice-Parking-lot-Finder.git
 
 ## Prerequite
 
-* (프로잭트를 실행하기 위해 필요한 dependencies 및 configuration들이 있다면, 설치 및 설정방법에 대해 기술)
+* (프로젝트를 실행하기 위해 필요한 dependencies 및 configuration들이 있다면, 설치 및 설정방법에 대해 기술)
 
 ```shell
 python -m venv .venv
