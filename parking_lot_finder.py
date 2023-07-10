@@ -40,7 +40,7 @@ def draw_detections(frame, detections, palette, labels, output_transform):
     frame = output_transform.resize(frame)
     xlocation_1=[240,210,100,30]
     ylocation_1=[50,165,405,550]
-    # f=open("C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/text-to-speech_test.txt",'w')
+    # f=open("<Path>/text-to-speech_test.txt",'w')
     for detection in detections:
         k=32        
         class_id = int(detection.id)
@@ -82,7 +82,7 @@ def draw_detections(frame, detections, palette, labels, output_transform):
                 landmark = output_transform.scale(landmark)
                 cv2.circle(frame, (int(landmark[0]), int(landmark[1])), 2, (0, 255, 255), 2)       
         cnt=len(a)        
-        f=open("C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/text-to-speech.txt",'w')
+        f=open("<Path>/text-to-speech_test.txt",'w')
         k=k-cnt             
         # print(k)
         if k==0:
@@ -119,7 +119,7 @@ def save_wav(x, path):
             f.setsampwidth(2)
             f.setframerate(sr)
             f.writeframes(x.tobytes())
-        os.system('C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/res.wav')
+        os.system('<Path>/res.wav')
     except Exception:
         pass
 def is_correct_args(args):
@@ -157,11 +157,11 @@ def main():
     args = parser.add_argument_group('Options')
     
     for i in range(1,6): 
-        args.model="C:/Users/AIoT19/open_model/open_model_zoo/demos/object_detection_demo/python/intel/vehicle-detection-0202/FP16/vehicle-detection-0202.xml "
+        args.model="<Path>/vehicle-detection-0202/FP16/vehicle-detection-0202.xml "
         args.architecture_type='ssd'
         args.adapter="openvino"
-        # args.input="C:/Users/AIoT19/Desktop/img.png"
-        args.input="C:/Users/AIoT19/Desktop/img{}.png".format(i)
+        # args.input="<Path>/img.png"
+        args.input="<Path>/img{}.png".format(i)
         args.device='CPU'
         args.labels= None
         args.prob_threshold=0.5
@@ -175,7 +175,7 @@ def main():
         args.num_streams=''
         args.num_threads=None
         args.loop=False
-        args.output="C:/Users/AIoT19/Desktop/test_0706_reuslt.png"
+        args.output="<Path>/test_0706_reuslt.png"
         args.no_show=None
         args.output_resolution=None
         args.utilization_monitors=''
@@ -351,11 +351,11 @@ def main():
         
         parser = ArgumentParser(add_help=False)
         args = parser.add_argument_group('Options')
-        args.model_melgan = 'C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/intel/text-to-speech-en-0001/text-to-speech-en-0001-generation/FP16/text-to-speech-en-0001-generation.xml'
-        args.model_duration = 'C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/intel/text-to-speech-en-0001/text-to-speech-en-0001-duration-prediction/FP16/text-to-speech-en-0001-duration-prediction.xml'
-        args.model_forward = 'C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/intel/text-to-speech-en-0001/text-to-speech-en-0001-regression/FP16/text-to-speech-en-0001-regression.xml'
-        args.out = 'C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/res{}.wav'.format(i)
-        args.input = ['C:/Users/AIoT19/open_model/open_model_zoo/demos/text_to_speech_demo/python/text-to-speech.txt']
+        args.model_melgan = '<Path>/text-to-speech-en-0001/text-to-speech-en-0001-generation/FP16/text-to-speech-en-0001-generation.xml'
+        args.model_duration = '<Path>/text-to-speech-en-0001/text-to-speech-en-0001-duration-prediction/FP16/text-to-speech-en-0001-duration-prediction.xml'
+        args.model_forward = '<Path>/text-to-speech-en-0001/text-to-speech-en-0001-regression/FP16/text-to-speech-en-0001-regression.xml'
+        args.out = '<Path>/res{}.wav'.format(i)
+        args.input = ['<Path>/text-to-speech.txt']
         args.device = 'CPU'
         args.alpha = 1.0
         args.speaker_id = 19
@@ -428,7 +428,7 @@ def main():
         log.debug("\tVocoder time: {:.1f} ms".format(time_wavernn * 1e3))
         log.debug("\tForwardTacotronTime: {:.1f} ms".format(time_forward * 1e3))
         save_wav(audio_res, args.out)
-        playsound('C:/Users/user/openvino/open_model_zoo/demos/text_to_speech_demo/python/res{}.wav'.format(i))
+        playsound('<Path>/res{}.wav'.format(i))
         
 
 
