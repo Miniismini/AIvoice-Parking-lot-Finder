@@ -56,8 +56,7 @@ omz_converter --name text-to-speech-en-0001-generation
 * (프로젝트 실행방법에 대해서 기술, 특별한 사용방법이 있다면 같이 기술)
 
 ```shell
-cd ~/xxxx
-source .venv/bin/activate
+
 
 cd /open_model_zoo\demos\text_to_speech_demo\python
 python parking.py 
