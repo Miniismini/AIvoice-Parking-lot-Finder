@@ -1,7 +1,7 @@
 # AIvoice-Parking-lot-Finder
 
 * 자동차 주차장을 카메라로 촬영하고 그것을 기반으로 주차 가능 자리수를 판단해서 음성으로 안내해주는 프로젝트
-* 본 프로젝트는 이미지 사용
+* 본 프로젝트는 이미지 사용 
 
 ## Requirement
 * opencv
@@ -12,7 +12,7 @@
 * (Code clone 방법에 대해서 기술)
 
 ```shell
-git clone https://github.com/zzz/yyy/xxxx
+git clone https://github.com/Miniismini/AIvoice-Parking-lot-Finder.git
 ```
 
 ## Prerequite
@@ -57,7 +57,6 @@ omz_converter --name text-to-speech-en-0001-generation
 
 ```shell
 
-
 cd /open_model_zoo\demos\text_to_speech_demo\python
 python parking.py 
 ```
@@ -72,4 +71,5 @@ python parking.py
 
 ## Appendix
 
-* (참고 자료 및 알아두어야할 사항들 기술)
+* 첨부된 이미지 전용 코드 (주차자리 설정)
+* 주차 자리를 인식하는 AI모델은 사용하지 않고 opencv를 이용해 주차 자리 설정
